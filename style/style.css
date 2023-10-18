@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body{
+    background: linear-gradient(45deg, #2b2b2b 25%, #333333 25%, #333333 50%, #2b2b2b 50%, #2b2b2b 75%, #333333 75%, #333333 100%);
+    background-size: 10px 10px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: rgb(250, 244, 233);
+}
+
+/* HEADER + GREETING */
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin-top: 125px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.greeting-section{
+    margin-top: 75px;
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: 45px;
+}
+
+/* CARDS */
+.card__flex--container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 150px;
+}
+
+.card{
+    width: 350px;
+    height: 500px;
+    perspective: 1000px;
+    background-image: url(https://media.wired.com/photos/5a3bf9025b461c24af9057f1/master/w_2560%2Cc_limit/hotdog-ta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -90px;
+}
+
+.card-inner{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    color: rgb(233, 191, 3);
+    font-weight: 700;
+    text-shadow: 2px 2px 0px rgb(36, 33, 33),
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card-front{
+    background: linear-gradient(45deg, #666666 25%, #888888 25%, #888888 50%, #666666 50%, #666666 75%, #888888 75%, #888888 100%);
+    background-size: 55px 55px;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back{
+    background-color: #000000f3;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back img{
+    max-width: 100%;
+    max-height: 100%;
+    padding: 25px;
+}
+
+.anubis{
+    font-size: 18px;
+    color: #f03438;
+}
+
+.vogue{
+    font-size: 18px;
+    color: #d824b4;
+}
+
+.terror{
+    font-size: 18px;
+    color: #9030c4;
+}
+
+/* Requisitos */
+.requisitos-section{
+    margin-top: 75px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.requisitos-greeting{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.list{
+    text-align: center;
+    font-size: 25px;
+    color: whitesmoke;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list a{
+    color: rgb(227, 117, 231);
+}
+
+/* FAQ */
+.faq{
+    margin-top: 75px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: auto;
+}
+
+.accordion-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    text-align: center;
+}
+
+.accordion-button{
+    font-size: 25px;
+    color: black;
+}
+
+/* SHAKE ANIMATION */
+.shake-bottom{animation:shake-bottom .8s cubic-bezier(.455,.03,.515,.955) 1s}
+@keyframes shake-bottom{0%,100%{transform:rotate(0deg);transform-origin:50% 100%}10%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-4deg)}30%,50%,70%{transform:rotate(4deg)}80%{transform:rotate(-2deg)}90%{transform:rotate(2deg)}}
+.slide-in-right{animation:slide-in-right 1s cubic-bezier(.25,.46,.45,.94) .5s both}
+@keyframes slide-in-right{0%{transform:translateX(1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.slide-in-left{animation:slide-in-left 1s cubic-bezier(.25,.46,.45,.94) 1s both}
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.slide-in-right{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+.slide-in-right span{
+    color: rgb(177, 4, 4);
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                 1px 1px 1px rgba(0, 0, 0, 0.6);
+    font-weight: 1000;
+    font-size: 50px;
+}
+.slide-in-left{
+    font-size: 25px;
+    color: rgb(201, 196, 196);
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.slide-in-left span {
+    color: goldenrod;
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+/* Redes */
+.redes{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 55px;
+}
+
+.redes img{
+    width: 50px;
+    transition: .2s;
+}
+
+.redes img:hover{
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+.footer-p{
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+/* Ganadores previos */
+.prev{
+    margin-top: 75px;
+    text-align: center;
+}

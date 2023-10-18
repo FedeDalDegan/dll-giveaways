@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer__grid--container{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50%, 1fr, 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "col1 col2 col3"
+    "col1 col2 col3"
+    "col1 col2 col3"
+    ;
+    justify-content: space-between;
+}
+
+.col-1{
+    grid-area: col1;
+}
+
+.col-2{
+    grid-area: col2;
+}
+
+.col-3{
+    grid-area: col3;
+}
